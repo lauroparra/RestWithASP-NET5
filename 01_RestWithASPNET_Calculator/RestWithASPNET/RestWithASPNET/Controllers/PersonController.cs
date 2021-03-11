@@ -29,29 +29,7 @@ namespace RestWithASPNET.Controllers
             }
             return BadRequest("Invalid Impult");
         }
-
-        [HttpGet("subtraction/{fistNumber}/{secondNumber}")]
-        public IActionResult subtraction(string fistNumber, string secondNumber)
-        {
-            if (IsNumeric(fistNumber) && IsNumeric(secondNumber))
-            {
-                var sum = ConvertToDecimal(fistNumber) - ConvertToDecimal(secondNumber);
-                return Ok(sum.ToString());
-            }
-            return BadRequest("Invalid Impult");
-        }
-
-        [HttpGet("mult/{fistNumber}/{secondNumber}")]
-        public IActionResult mult(string fistNumber, string secondNumber)
-        {
-            if (IsNumeric(fistNumber) && IsNumeric(secondNumber))
-            {
-                var sum = ConvertToDecimal(fistNumber) * ConvertToDecimal(secondNumber);
-                return Ok(sum.ToString());
-            }
-            return BadRequest("Invalid Impult");
-        }
-
+               
         private bool IsNumeric(string strNumber)
         {
             double number;
